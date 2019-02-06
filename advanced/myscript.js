@@ -1,7 +1,6 @@
 $(document).ready(function() {
 		$("#moveme").css({"position":"absolute"})
 	    $(document).mousemove(function (event) {
-	    	console.log(event)
 	        $("#moveme").stop()
 	        			.animate({
 	        				"left": event.pageX-120, 
