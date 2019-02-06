@@ -22,7 +22,6 @@
 		$(document).ready(function(){
 			function myfunctionadd(id){
 				todos.push($("#myinput").val());
-
 				addListeners();
 			}
 			function myfunction(id){
@@ -36,9 +35,6 @@
 					addListeners();
 				});
 			}
-
-
-
 			var todos = ["go to the bank", "go shopping", "go to the doctor","meet my friend","go to sleep"];
 			addListeners();
 			function addListeners() {
@@ -50,8 +46,6 @@
 					document.getElementById("id"+i).addEventListener("click",function() {myfunction(this.id)}, false);
 				}
 			}
-
-
 			document.getElementById("mybutton").addEventListener("click",function() {myfunctionadd(this.id)}, false);
 		});
 	</script>

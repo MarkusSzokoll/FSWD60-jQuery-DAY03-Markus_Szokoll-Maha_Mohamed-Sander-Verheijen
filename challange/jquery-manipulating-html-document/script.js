@@ -3,4 +3,24 @@ $(document).ready(function() {
 	$("div[data-type='notebook']").css({"background-color": "red"})
 	$("div[data-type='phone']").css({"background-color": "green"})
 	$("div[data-type='tablet']").css({"background-color": "blue"})
+	$("#notebooks").on('click', function() {
+		$("div[data-type='notebook']").show();
+		$("div[data-type='phone']").hide();
+		$("div[data-type='tablet']").hide();
+	});
+	$("#phones").on('click', function() {
+		$("div[data-type='notebook']").hide();
+		$("div[data-type='phone']").show();
+		$("div[data-type='tablet']").hide();
+	});
+	$("#tablets").on('click', function() {
+		$("div[data-type='notebook']").hide();
+		$("div[data-type='phone']").hide();
+		$("div[data-type='tablet']").show();
+	});
+	$("#clear").on('click', function() {
+		$("div[data-type='notebook']").show();
+		$("div[data-type='phone']").show();
+		$("div[data-type='tablet']").show();
+	});
 });
