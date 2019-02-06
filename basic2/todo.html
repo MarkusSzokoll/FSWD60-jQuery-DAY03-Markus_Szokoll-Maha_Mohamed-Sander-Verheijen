@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>jQuery animation</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+	<h1>TO DO - LIST</h1>
+
+	<div id="animate"></div>
+	<SCRIPT>
+		var todos = ["go to the bank", "go shopping", "go to the doctor","meet my friend","go to sleep"];
+		for(i=0;i<todos.length;i++){
+			document.getElementById("animate").innerHTML += "<div id='"+i+"'>" + todos[i] + "</div>";
+		}
+	</SCRIPT>
+</body>
+</html>
