@@ -1,10 +1,12 @@
 $(document).ready(function() {
 		$("#moveme").css({"position":"absolute"})
 	    $(document).mousemove(function (event) {
+	    	tempx = event.pageX-120;
+	    	tempy = event.pageY-120;
 	        $("#moveme").stop()
 	        			.animate({
-	        				"left": event.pageX-120, 
-	        				"top": event.pageY-120
+	        				"left": tempx,
+	        				"top": tempy
 	        			}, "slow", "linear");
 	    });
 	    $("#moveme").mousedown(function() {
@@ -17,6 +19,5 @@ $(document).ready(function() {
     						"left": tempx, "top": tempy
     					}, "slow", "linear");
 	    	$("#moveme").fadeIn();
-
 	    });
 });
