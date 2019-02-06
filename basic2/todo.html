@@ -12,12 +12,48 @@
 
 	<h1>TO DO - LIST</h1>
 
+	<div>
+		<input type="text" id ="myinput">
+		<button id = "mybutton">Add Task</button>
+	</div>
+
 	<div id="animate"></div>
-	<SCRIPT>
-		var todos = ["go to the bank", "go shopping", "go to the doctor","meet my friend","go to sleep"];
-		for(i=0;i<todos.length;i++){
-			document.getElementById("animate").innerHTML += "<div id='"+i+"'>" + todos[i] + "</div>";
-		}
-	</SCRIPT>
+	<script>
+		$(document).ready(function(){
+			function myfunctionadd(id){
+				todos.push($("#myinput").val());
+
+				addListeners();
+			}
+			function myfunction(id){
+				console.log(id);
+				$("#"+id).animate({
+					opacity: 0.0,
+					paddingLeft: "+=80"
+				},500, function(){
+					$("#"+id).remove();
+					todos.splice(id.substring(id.length-1,id.length),1);
+					addListeners();
+				});
+			}
+
+
+
+			var todos = ["go to the bank", "go shopping", "go to the doctor","meet my friend","go to sleep"];
+			addListeners();
+			function addListeners() {
+				document.getElementById("animate").innerHTML = "";
+				for(i=0;i<todos.length;i++){
+					document.getElementById("animate").innerHTML += "<div id='id"+i+"'>" + todos[i] + "</div>";
+				}
+				for(i=0;i<todos.length;i++){
+					document.getElementById("id"+i).addEventListener("click",function() {myfunction(this.id)}, false);
+				}
+			}
+
+
+			document.getElementById("mybutton").addEventListener("click",function() {myfunctionadd(this.id)}, false);
+		});
+	</script>
 </body>
 </html>
